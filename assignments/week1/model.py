@@ -49,10 +49,9 @@ class GradientDescentLinearRegression(LinearRegression):
 
         for epoch in range(epochs):
 
-
             y_pred = self.predict(X)
 
-            L = ((y_pred - y)**2).mean()
+            L = ((y_pred - y) ** 2).mean()
 
             print(f"epoch: {epoch}, loss: {L}")
 
@@ -64,7 +63,6 @@ class GradientDescentLinearRegression(LinearRegression):
 
             self.w -= lr * dL_dw
             self.b -= lr * dL_db
-
 
     # def predict(self, X: np.ndarray) -> np.ndarray:
     #     """
