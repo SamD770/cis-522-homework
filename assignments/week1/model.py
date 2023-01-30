@@ -31,10 +31,8 @@ class LinearRegression:
 
         self.w, self.b = separate_bias(w_b_concat)
 
-
     def predict(self, X):
         return X @ self.w + self.b
-
 
 
 class GradientDescentLinearRegression(LinearRegression):
@@ -42,9 +40,7 @@ class GradientDescentLinearRegression(LinearRegression):
     A linear regression model that uses gradient descent to fit the model.
     """
 
-    def fit(
-        self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
-    ):
+    def fit(self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000):
         self.w
         self.b
 
