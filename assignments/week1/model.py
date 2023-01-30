@@ -2,6 +2,9 @@ import numpy as np
 import torch
 
 
+FEATURES = 8
+
+
 def add_bias_feature(X):
     samples, features = X.shape
     dummy_feature = np.ones((samples, 1))
@@ -21,8 +24,8 @@ class LinearRegression:
     b: float
 
     def __init__(self):
-        self.w = np.random.uniform()
-        self.b = np.random.uniform()
+        self.w = np.random.uniform(low=-0.1, high=0.1, size=FEATURES)
+        self.b = np.random.uniform(low=-1, high=1)
 
     def fit(self, X, y):
         X_concat = add_bias_feature(X)
@@ -40,19 +43,38 @@ class GradientDescentLinearRegression(LinearRegression):
     A linear regression model that uses gradient descent to fit the model.
     """
 
-    def fit(self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000):
-        self.w
-        self.b
+    def fit(self, X: np.ndarray, y: np.ndarray, lr: float = 1e-7, epochs: int = 1000):
 
-    def predict(self, X: np.ndarray) -> np.ndarray:
-        """
-        Predict the output for the given input.
+        n_samples, _ = X.shape
 
-        Arguments:
-            X (np.ndarray): The input data.
+        for epoch in range(epochs):
 
-        Returns:
-            np.ndarray: The predicted output.
 
-        """
-        raise NotImplementedError()
+            y_pred = self.predict(X)
+
+            L = ((y_pred - y)**2).mean()
+
+            print(f"epoch: {epoch}, loss: {L}")
+
+            X_concat = add_bias_feature(X)
+
+            dL_dW = 2 * X_concat.T @ (y_pred - y) / n_samples
+
+            dL_dw, dL_db = separate_bias(dL_dW)
+
+            self.w -= lr * dL_dw
+            self.b -= lr * dL_db
+
+
+    # def predict(self, X: np.ndarray) -> np.ndarray:
+    #     """
+    #     Predict the output for the given input.
+    #
+    #     Arguments:
+    #         X (np.ndarray): The input data.
+    #
+    #     Returns:
+    #         np.ndarray: The predicted output.
+    #
+    #     """
+    #     super(self).predict(X)
