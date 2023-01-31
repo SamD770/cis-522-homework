@@ -1,7 +1,12 @@
 import numpy as np
 
 
-def add_bias_feature(X):
+def add_bias_feature(X: np.ndarray) -> np.ndarray:
+    """
+    Arguments:
+        X  (np.ndarray): X values
+    Returns: (np.ndarray)
+    """
     samples, features = X.shape
     dummy_feature = np.ones((samples, 1))
 
@@ -29,8 +34,6 @@ class LinearRegression:
     def initialise_params(self, features: int) -> None:
         self.w = np.zeros(features)
         self.b = 0
-        # self.w = np.random.zeros(low=-0.1, high=0.1, size=features)
-        # self.b = np.random.uniform(low=-1, high=1)
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """
@@ -77,7 +80,9 @@ class GradientDescentLinearRegression(LinearRegression):
 
         Arguments:
             X (np.ndarray): The input data.
-            y (np.ndarray): The input labels
+            y (np.ndarray): The input labels.
+            lr (int): The learning rate.
+            epochs (int): The epochs.
         """
         n_samples, features = X.shape
 
@@ -101,6 +106,8 @@ class GradientDescentLinearRegression(LinearRegression):
             self.w -= lr * dL_dw
             self.b -= lr * dL_db
 
+    # We are using the same predict function as the linear regression therefore
+    # No need to override it
     # def predict(self, X: np.ndarray) -> np.ndarray:
     #     """
     #     Predict the output for the given input.
