@@ -27,7 +27,7 @@ class LinearRegression:
         self.b = None
 
     def initialise_params(self, features: int) -> None:
-        self.w = np.zeros(8)
+        self.w = np.zeros(features)
         self.b = 0
         # self.w = np.random.zeros(low=-0.1, high=0.1, size=features)
         # self.b = np.random.uniform(low=-1, high=1)
