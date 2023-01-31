@@ -69,8 +69,16 @@ class GradientDescentLinearRegression(LinearRegression):
     A linear regression model that uses gradient descent to fit the model.
     """
 
-    def fit(self, X: np.ndarray, y: np.ndarray, lr: float = 1e-7, epochs: int = 1000):
+    def fit(
+        self, X: np.ndarray, y: np.ndarray, lr: float = 1e-7, epochs: int = 1000
+    ) -> None:
+        """
+        Fits the model parameters using the provided data.
 
+        Arguments:
+            X (np.ndarray): The input data.
+            y (np.ndarray): The input labels
+        """
         n_samples, features = X.shape
 
         if self.w is None:
