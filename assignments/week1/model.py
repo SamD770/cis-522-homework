@@ -27,8 +27,10 @@ class LinearRegression:
         self.b = None
 
     def initialise_params(self, features: int) -> None:
-        self.w = np.random.uniform(low=-0.1, high=0.1, size=features)
-        self.b = np.random.uniform(low=-1, high=1)
+        self.w = np.zeros(8)
+        self.b = 0
+        # self.w = np.random.zeros(low=-0.1, high=0.1, size=features)
+        # self.b = np.random.uniform(low=-1, high=1)
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """
@@ -38,10 +40,6 @@ class LinearRegression:
             X (np.ndarray): The input data.
             y (np.ndarray): The input labels
         """
-        if self.w is None:
-            samples, features = X.shape
-            self.initialise_params(features)
-
         X_concat = add_bias_feature(X)
 
         w_b_concat = np.linalg.inv(X_concat.T @ X_concat) @ X_concat.T @ y
