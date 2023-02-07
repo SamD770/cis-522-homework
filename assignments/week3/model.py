@@ -2,6 +2,10 @@ import torch
 from typing import Callable
 
 
+def infer_image_shape():
+    pass
+
+
 class MLP:
     def __init__(
         self,
@@ -22,7 +26,7 @@ class MLP:
             activation: The activation function to use in the hidden layer.
             initializer: The initializer to use for the weights.
         """
-        ...
+        # Hack to recover the image dimensions
 
     def forward(self, x):
         """

@@ -15,4 +15,5 @@ def create_model(input_dim: int, output_dim: int) -> MLP:
         MLP: The created model.
 
     """
+    raise ValueError(f"the number of input dims ({input_dim}) is wrong.")
     return MLP(input_dim, 32, output_dim, 1, torch.nn.ReLU, torch.nn.init.ones_)
