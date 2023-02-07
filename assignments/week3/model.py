@@ -32,9 +32,9 @@ class MLP(torch.nn.Module):
         super(MLP, self).__init__()
 
         def get_linear(in_dim, out_dim):
-            l = nn.Linear(in_dim, out_dim)
-            initializer(l.weight)
-            return l
+            my_layer = nn.Linear(in_dim, out_dim)
+            initializer(my_layer.weight)
+            return my_layer
 
         if hidden_sizes is None:
             hidden_sizes = [hidden_size] * hidden_count
