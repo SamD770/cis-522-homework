@@ -51,3 +51,9 @@ def test_docstrings():
         assert (
             class_.__doc__ is not None
         ), f"The class `{class_}` does not have a docstring."
+
+
+if __name__ == "__main__":
+    test_has_correct_attributes()
+    test_fn_signatures()
+    test_docstrings()
