@@ -9,7 +9,7 @@ a holdout test suite that will be used to evaluate your code.
 
 import inspect
 import numpy as np
-from model import LinearRegression, GradientDescentLinearRegression
+from misc.model import LinearRegression, GradientDescentLinearRegression
 import pytest
 
 model_parametrize = pytest.mark.parametrize(
