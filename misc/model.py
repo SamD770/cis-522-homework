@@ -105,18 +105,3 @@ class GradientDescentLinearRegression(LinearRegression):
 
             self.w -= lr * dL_dw
             self.b -= lr * dL_db
-
-    # We are using the same predict function as the linear regression therefore
-    # No need to override it
-    # def predict(self, X: np.ndarray) -> np.ndarray:
-    #     """
-    #     Predict the output for the given input.
-    #
-    #     Arguments:
-    #         X (np.ndarray): The input data.
-    #
-    #     Returns:
-    #         np.ndarray: The predicted output.
-    #
-    #     """
-    #     super(self).predict(X)
