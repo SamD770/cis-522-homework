@@ -21,7 +21,7 @@ def create_model(input_dim: int, output_dim: int) -> MLP:
         num_classes=output_dim,
         activation=torch.nn.ReLU,
         initializer=torch.nn.init.xavier_uniform_,
-        hidden_sizes=[1000, 1500, 500],
+        hidden_sizes=[1000, 1500, 500, 100],
     )
 
     return my_mlp

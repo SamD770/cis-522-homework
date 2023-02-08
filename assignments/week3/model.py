@@ -46,6 +46,7 @@ class MLP(torch.nn.Module):
         for count, next_count in zip(unit_counts[:-1], unit_counts[1:]):
             layers.append(get_linear(count, next_count))
             layers.append(activation())
+            layers.append(nn.BatchNorm1d(next_count))
 
         self.hidden_layers = nn.ModuleList(layers)
 
