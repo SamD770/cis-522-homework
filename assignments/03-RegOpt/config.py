@@ -11,8 +11,6 @@ class CONFIG:
     initial_learning_rate = 0.001
     initial_weight_decay = 0
 
-    # stochasticity test
-
     lrs_kwargs = {
         # You can pass arguments to the learning rate scheduler
         # constructor here.
