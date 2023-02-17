@@ -25,8 +25,4 @@ class CONFIG:
         weight_decay=CONFIG.initial_weight_decay,
     )
 
-    transforms = Compose(
-        [
-            ToTensor(),
-        ]
-    )
+    transforms = Compose([ToTensor()])
