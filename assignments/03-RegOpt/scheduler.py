@@ -7,6 +7,7 @@ class CustomLRScheduler(_LRScheduler):
     """
     My learning rate scheduler.
     """
+
     def __init__(self, optimizer, last_epoch=-1):
         """
         Create a new scheduler.
