@@ -2,7 +2,7 @@ from typing import Callable
 import torch
 import torch.optim
 import torch.nn as nn
-from torchvision.transforms import Compose, ToTensor  # maybe Normalise()?
+from torchvision.transforms import Compose, ToTensor, Normalize
 
 
 class CONFIG:
@@ -24,4 +24,6 @@ class CONFIG:
         weight_decay=CONFIG.initial_weight_decay,
     )
 
-    transforms = Compose([ToTensor()])  # dummy comment
+    transforms = Compose(
+        [ToTensor(), Normalize(mean=[0.485, 0.456, 0.4], std=[0.229, 0.224, 0.2])]
+    )
