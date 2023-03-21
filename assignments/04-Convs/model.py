@@ -5,6 +5,7 @@ from torch.nn import functional as F
 
 class Model(torch.nn.Module):
     """A simple convnet architecture."""
+
     def __init__(self, num_channels: int, num_classes: int) -> None:
         """Initialise the model."""
         super(Model, self).__init__()
@@ -25,6 +26,7 @@ class Model(torch.nn.Module):
         x = F.relu(x)
         x = self.fc2(x)
         return x
+
 
 # def __init__(self, num_channels: int, num_classes: int) -> None:
 #     """Initialise the model."""
