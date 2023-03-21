@@ -11,7 +11,7 @@ class Model(torch.nn.Module):
         super(Model, self).__init__()
         self.conv1 = nn.Conv2d(num_channels, 32, 3, 1)
         self.conv2 = nn.Conv2d(32, 64, 3, 1)
-        self.fc1 = nn.Linear(64*14*14, 128)
+        self.fc1 = nn.Linear(64 * 14 * 14, 128)
         self.fc2 = nn.Linear(128, num_classes)
 
     def forward(self, x):
