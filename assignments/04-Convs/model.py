@@ -14,7 +14,7 @@ class Model(torch.nn.Module):
         self.fc1 = nn.Linear(64 * 14 * 14, 128)
         self.fc2 = nn.Linear(128, num_classes)
 
-    def forward(self, x):
+    def forward(self, x) -> torch.Tensor:
         """Outputs the logits for a given input."""
         x = self.conv1(x)
         x = F.relu(x)
