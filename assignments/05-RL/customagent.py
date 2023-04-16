@@ -32,7 +32,7 @@ class Agent:
         if s[6] or s[7]:  # legs have contact
             angle_todo = 0
             hover_todo = (
-                    -(s[3]) * 0.5
+                -(s[3]) * 0.5
             )  # override to reduce fall speed, that's all we need after contact
 
         a = 0
