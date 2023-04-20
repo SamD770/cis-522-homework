@@ -4,17 +4,19 @@ import numpy as np
 
 
 class Agent:
-    """dummy docstring."""
+    """Agent using hard coded solution."""
 
     def __init__(
         self, action_space: gym.spaces.Discrete, observation_space: gym.spaces.Box
     ):
-        """dummy docstring."""
+        """Initialise the outputs."""
         self.action_space = action_space
         self.observation_space = observation_space
 
     def act(self, observation: gym.spaces.Box) -> gym.spaces.Discrete:
-        """dummy docstring."""
+        """Decides how to move the lunar lander, adapted from
+        https://github.com/Farama-Foundation/Gymnasium/blob/main/gymnasium/envs/box2d/lunar_lander.py.
+        """
         s = observation
 
         angle_targ = s[0] * 0.5 + s[2] * 1.0  # angle should point towards center
@@ -51,5 +53,5 @@ class Agent:
         terminated: bool,
         truncated: bool,
     ) -> None:
-        """dummy docstring."""
+        """RL need not apply."""
         pass
