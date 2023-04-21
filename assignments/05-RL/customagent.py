@@ -29,7 +29,7 @@ class Agent:
         )  # target y should be proportional to horizontal offset
 
         angle_todo = (angle_targ - s[4]) * 0.5 - (s[5]) * 1.0
-        hover_todo = (hover_targ - s[1]) * 0.5 - (s[3]) * 0.5
+        hover_todo = (hover_targ - s[1]) * 0.6 - (s[3]) * 0.5
 
         if s[6] or s[7]:  # legs have contact
             angle_todo = 0
